@@ -151,17 +151,13 @@ export default function LandingPage() {
             backgroundColor: "rgba(200, 200, 200, 0.8)"
           }}
         >
-          <h2 className="text-xl md:text-2xl font-semibold mb-4">
+          <p className="text-base md:text-lg">
             How many Diet Cokes do you drink per day?
+          </p>
+          <br />
+          <h2 className="text-xl md:text-2xl font-semibold mb-4">
+            {inputValue} Diet Cokes
           </h2>
-          <Input
-            type="number"
-            value={inputValue}
-            onChange={handleInputChange}
-            className="text-base md:text-lg"
-            placeholder="Enter diet coke amount"
-            aria-label="Diet coke amount input"
-          />
           <br />
           <Slider
             min={0}

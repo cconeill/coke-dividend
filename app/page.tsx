@@ -23,8 +23,8 @@ export default function LandingPage() {
     fetchSharePrice();
   }, []); // Empty dependency array means this runs once on mount
 
-  const [inputValue, setInputValue] = useState<number>(100)
-  const yearlyDividend = 0.1 
+  const [inputValue, setInputValue] = useState<number>(1)
+  const yearlyDividend = 0.51 
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number.parseFloat(event.target.value)
@@ -35,7 +35,9 @@ export default function LandingPage() {
     setInputValue(value[0])
   }
 
-  const numberOfShares = Math.floor(inputValue * 12 / yearlyDividend)
+  // inputValue is the number of Diet Cokes per day, we need to multiply by 365 to get the number of Diet Cokes per year
+  // we need to multiply by $1.66 as the cost per Diet Coke.
+  const numberOfShares = Math.floor(inputValue * 365 * 1.66 / yearlyDividend)
   const formattedNumberOfShares = numberOfShares.toLocaleString();
 
   const priceOfShares = sharePrice !== null ? Math.floor(numberOfShares * sharePrice) : 0
@@ -44,7 +46,7 @@ export default function LandingPage() {
   return (
     <>
       <link
-        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet"
       />
     <main 
@@ -57,52 +59,55 @@ export default function LandingPage() {
       }}
     >
       <div style={{ fontFamily: 'Libre Baskerville, serif' }}>
-      <h1 className="text-6xl font-bold mb-4">PG&E Dividend Calculator</h1>
-      <p className="text-xl mb-12">Calculate how many shares of PG&E you need to own to pay your electricity bill</p>
+        {/* put a space between each of these h1s */}
+      <div className="flex items-center rounded-lg space-x-4">
+      <h1 className="text-7xl font-bold mb-4" style={{ fontFamily: 'Imperial Script, serif' }}>Diet</h1>
+      <h1 className="text-6xl font-bold mb-4" style={{ color: "#F40000" }}>Coke</h1>
+      <h1 className="text-6xl font-bold mb-4">Dividend Calculator</h1>
+      </div>
+      
+      <p className="text-xl mb-12">Calculate how many shares of Coca-Cola you need to own to pay for your daily Diet Coke</p>
 
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-6">
         <div className="bg-muted p-8 rounded-lg" style={{ boxShadow: "0 4px 30px rgba(255, 255, 255, 0.5)", backgroundColor: "rgba(200, 200, 200, 0.8)" }}>
-          <h2 className="text-2xl font-semibold mb-4">Enter your average monthly electricity bill:</h2>
-          <div className="flex items-center rounded-lg">
-          <span className="px-2 text-lg">$</span>
+          <h2 className="text-2xl font-semibold mb-4">How many Diet Cokes do you drink per day?</h2>
           <Input
             type="number"
             value={inputValue}
             onChange={handleInputChange}
             className="text-lg"
-            placeholder="Enter dollar amount"
-            aria-label="Dollar amount input"
+            placeholder="Enter diet coke amount"
+            aria-label="Diet coke amount input"
           />
-          </div>
           <br />
           <Slider
             min={0}
-            max={500}
-            step={10}
+            max={20}
+            step={1}
             value={[inputValue]}
             onValueChange={handleSliderChange}
-            aria-label="Dollar amount slider"
+            aria-label="Diet Coke amount slider"
           />
         </div>
         </div>
         <div className="space-y-6">
         <div className="bg-muted p-8 rounded-lg" style={{ boxShadow: "0 4px 30px rgba(255, 255, 255, 0.5)", backgroundColor: "rgba(200, 200, 200, 0.8)" }}>
-          <p className="text-lg mb-4">To cover a monthly bill of ${inputValue}, you will need to buy:</p>
-          <p className="text-4xl font-bold text-primary mb-4">{formattedNumberOfShares} shares</p>
+          <p className="text-lg mb-4">To cover your {inputValue} Diet Coke per day habit, you will need to buy:</p>
+          <p className="text-4xl font-bold text-primary mb-4" style={{ color: "#F40000" }}>{formattedNumberOfShares} shares</p>
           <p className="text-muted-foreground">
             This calculation is based on a quarterly dividend of ${yearlyDividend} per share.
           </p>
         </div>
         <div className="bg-muted p-8 rounded-lg" style={{ boxShadow: "0 4px 30px rgba(255, 255, 255, 0.5)", backgroundColor: "rgba(200, 200, 200, 0.8)" }}>
-          <p className="text-lg mb-4">At PG&E's current price of ${sharePrice} per share, this will cost you:</p>
-          <p className="text-4xl font-bold text-primary mb-4">${formattedPriceOfShares} dollars</p>
+          <p className="text-lg mb-4">At Coca-Cola's current price of ${sharePrice} per share, this will cost you:</p>
+          <p className="text-4xl font-bold text-primary mb-4" style={{ color: "#F40000" }}>${formattedPriceOfShares} dollars</p>
         </div>
         </div>
         </div>
         </div>
       <footer className="mt-20 text-center">
-          Source code <a href="https://github.com/cconeill/dividend/" target="_blank" rel="noopener noreferrer" className="underline">cconeill/dividend</a> 👨‍💻
+          Source code <a href="https://github.com/cconeill/coke-dividend/" target="_blank" rel="noopener noreferrer" className="underline">cconeill/coke-dividend</a> 👨‍💻
           <p>Made with ❤️ in San Francisco</p>
       </footer>
     </main>

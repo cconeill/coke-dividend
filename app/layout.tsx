@@ -3,28 +3,28 @@ import './globals.css'
 import Head from 'next/head';
 
 export const metadata: Metadata = {
-  title: 'PG&E Dividend Calculator',
-  description: 'How much PG&E stock do you need to own to pay your electricity bill via dividend income?',
+  title: 'Diet Coke Dividend Calculator',
+  description: 'How much Coca-Cola stock do you need to own to pay your daily Diet Coke habit?',
   openGraph: {
-    title: "PG&E Dividend Calculator",
-    description: "How much PG&E stock do you need to own to pay your electricity bill via dividend income?",
-    url: "https://pge-dividend.vercel.app/",
-    siteName: "PG&E Dividend Calculator",
+    title: "Diet Coke Dividend Calculator",
+    description: "How much Coca-Cola stock do you need to own to pay your daily Diet Coke habit?",
+    url: "https://diet-coke-dividend.vercel.app/",
+    siteName: "Diet Coke Dividend Calculator",
     images: [
       {
-        url: "https://pge-dividend.vercel.app/pge.png",
+        url: "https://diet-coke-dividend.vercel.app/dietcoke.png",
         width: 1200,
         height: 630,
-        alt: "PG&E sucks",
+        alt: "Diet Coke habit",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PG&E Dividend Calculator",
-    description: "How much PG&E stock do you need to own to pay your electricity bill via dividend income?",
-    images: ["https://pge-dividend.vercel.app/pge.png"],
+    title: "Diet Coke Dividend Calculator",
+    description: "How much Coca-Cola stock do you need to own to pay your daily Diet Coke habit?",
+    images: ["https://diet-coke-dividend.vercel.app/dietcoke.png"],
   },
 }
 

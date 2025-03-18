@@ -119,6 +119,8 @@ export default function LandingPage() {
     backgroundRepeat: 'no-repeat',
   }}
 >
+<div className="container mx-auto px-4 sm:px-6 md:px-8 flex flex-col items-center justify-center min-h-screen">
+
   <div style={{ fontFamily: 'Libre Baskerville, serif' }}>
     <div className="flex flex-wrap items-center justify-center space-x-4">
       <h1
@@ -221,6 +223,7 @@ export default function LandingPage() {
     Source code <a href="https://github.com/cconeill/coke-dividend/" target="_blank" rel="noopener noreferrer" className="underline">cconeill/coke-dividend</a> 👨‍💻
     <p>Made with ❤️ in San Francisco</p>
   </footer>
+  </div>
 </main>
 
     </>

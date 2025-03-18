@@ -24,7 +24,8 @@ export default function LandingPage() {
   }, []); // Empty dependency array means this runs once on mount
 
   const [inputValue, setInputValue] = useState<number>(1)
-  const yearlyDividend = 0.51 
+  // 0.51 is the quarterly dividend per share
+  const yearlyDividend = 0.51 * 4
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number.parseFloat(event.target.value)

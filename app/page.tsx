@@ -111,16 +111,12 @@ export default function LandingPage() {
       </footer>
     </main> */}
     <main 
-  className="flex min-h-screen flex-col items-center justify-center p-6 md:p-24"
-  style={{
-    backgroundImage: 'url(/background.webp)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-  }}
->
-<div className="container mx-auto px-4 sm:px-6 md:px-8 flex flex-col items-center justify-center min-h-screen">
-
+        className="bg-cover bg-center bg-no-repeat min-h-screen overflow-x-hidden p-4 md:p-24"
+        style={{
+        backgroundImage: 'url(/background.webp)',
+      }}
+    >
+<div className="w-full max-w-md sm:max-w-lg md:max-w-4xl mx-auto">
   <div style={{ fontFamily: 'Libre Baskerville, serif' }}>
     <div className="flex flex-wrap items-center justify-center space-x-4">
       <h1

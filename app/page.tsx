@@ -188,7 +188,7 @@ export default function LandingPage() {
             {formattedNumberOfShares} shares
           </p>
           <p className="text-muted-foreground">
-            This calculation is based on a quarterly dividend of ${yearlyDividend} per share.
+            This calculation is based on a yearly dividend of ${yearlyDividend} per share.
           </p>
         </div>
         <div 
